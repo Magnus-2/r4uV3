@@ -25,7 +25,7 @@ public class UserController {
     @GetMapping("/security/users")
     public String getAll(Model model) {
         model.addAttribute("users", userService.findAll());
-        return "/security/users";
+        return "security/users";
     }
 
     @GetMapping("/security/user/{op}/{id}")
@@ -34,7 +34,7 @@ public class UserController {
         model.addAttribute("user", user);
         model.addAttribute("userRoles", roleService.getUserRoles(user));
         model.addAttribute("userNotRoles", roleService.getUserNotRoles(user));
-        return "/security/user" + op; //returns employeeEdit or employeeDetails
+        return "security/user" + op; //returns employeeEdit or employeeDetails
     }
 
     @PostMapping("/users/addNew")
