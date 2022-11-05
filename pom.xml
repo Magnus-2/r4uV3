@@ -8,11 +8,11 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.kindsonthegenius</groupId>
-	<artifactId>fleetmsv2</artifactId>
+	<groupId>com.r4u</groupId>
+	<artifactId>r4u</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>fleetmsv2</name>
-	<description>Fleet Management Sytem v.2</description>
+	<name>r4u</name>
+	<description>Reservations for you</description>
 	<properties>
 		<java.version>8</java.version>
 	</properties>

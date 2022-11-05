@@ -2,27 +2,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fleetms-v2
+  name: r4u
 spec:
   selector:
     matchLabels:
-      app: fleetms-v2
+      app: r4u
   replicas: 3
   template:
     metadata:
       labels:
-        app: fleetms-v2
+        app: r4u
     spec:
       containers:
-        - name: fleetms-v2
-          image: fleetms-v2:1.0
+        - name: r4u
+          image: r4u:1.0
           ports:
             - containerPort: 8080
           env:   # Setting Environmental Variables
             - name: DB_HOST   # Setting Database host address
               value: mysql
             - name: DB_NAME  # Setting Database name
-              value: fleetdb
+              value: r4udb
             - name: DB_USERNAME  # Setting Database username
               value: root
             - name: DB_PASSWORD # Setting Database password
@@ -33,12 +33,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: fleetms-service
+  name: r4u-service
 spec:
   ports:
     - protocol: "TCP"
       port: 8080    # Port inside the cluster
       targetPort: 8080   # Port exposed to the outside
   selector:
-    app: fleetms-v2
+    app: r4u
   type: NodePort
