@@ -13,37 +13,37 @@ public class ApplicationController {
 
     @GetMapping("/Reservations")
     public String hr(){
-        return "/Reservations/index";
+        return "Reservations/index";
     }
 
     @GetMapping("/fleet")
     public String fleet(){
-        return "/fleet/index";
+        return "fleet/index";
     }
 
     @GetMapping("/accounts")
     public String accounts(){
-        return "/accounts/index";
+        return "accounts/index";
     }
 
     @GetMapping("/payroll")
     public String payroll(){
-        return "/payroll/index";
+        return "payroll/index";
     }
 
     @GetMapping("/helpdesk")
     public String helpdesk(){
-        return "/helpdesk/index";
+        return "helpdesk/index";
     }
 
     @GetMapping("/parameters")
     public String parameters(){
-        return "/parameters/index";
+        return "parameters/index";
     }
 
     @GetMapping("/reports")
     public String reports(){
-        return "/reports/index";
+        return "reports/index";
     }
 
     @GetMapping("/security")
