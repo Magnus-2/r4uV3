@@ -89,16 +89,13 @@
                 <ul class="dropdown-menu extended logout">
                     <div class="log-arrow-up"></div>
                     <li class="eborder-top">
-                        <a th:href="@{/employee/profile}"><i class="icon_profile"></i> My Profile</a>
+                        <a th:href="@{/security/users}"><i class="icon_profile"></i> My Profile</a>
                     </li>
                     <li>
                         <a th:href="@{/logout}"><i class="icon_key_alt"></i> Log Out</a>
                     </li>
                     <li>
-                        <a href="#"><i class="icon_key_alt"></i> Documentation</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="icon_key_alt"></i> Documentation</a>
+                        <a th:href="@{/logout}"><i class="icon_key_alt"></i> Log Out</a>
                     </li>
                 </ul>
             </li>
@@ -123,23 +120,23 @@
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="fa fa-users"></i>
-                          <span>HR</span>
+                          <span>Reservations</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="/hr">HR Home</a></li>
+                          <li><a class="" href="/hr">Reservations Home</a></li>
                       </ul>
-                  </li>
+                  </li>  <!-- Richtigen Link einfügen Reservation-->
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="fa fa-usd"></i>
-                          <span>Accounts</span>
+                          <span>Restaurant</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="/accounts">Accounts Home</a></li>
+                          <li><a class="" href="/accounts">Restaurant</a></li>
                       </ul>
-                  </li>
+                  </li>  <!-- Restaurant vielleicht löschen-->
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="fa fa-gear"></i>
@@ -149,7 +146,7 @@
                       <ul class="sub">
                           <li><a class="" href="/parameters">Parameters Home</a></li>
                       </ul>
-                  </li>
+                  </li>  <!-- Parameters Löschen-->
 
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
@@ -162,17 +159,17 @@
                           <li><a class="" th:href="@{/reports}">New Report</a></li>
                           <li><a class="" th:href="@{/reports}">Summary Page</a></li>
                       </ul>
-                  </li>
+                  </li>  <!-- Reports löschen-->
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="fa fa-key"></i>
-                          <span>Security</span>
+                          <span>Settings</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="/security">Security Home</a></li>
+                          <li><a class="" href="/security">Settings Home</a></li>
                       </ul>
-                  </li>
+                  </li>  <!-- Settings -->
               </ul>
               <!-- sidebar menu end-->
           </div>
