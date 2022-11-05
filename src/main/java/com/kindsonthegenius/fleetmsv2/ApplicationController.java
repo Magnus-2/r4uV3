@@ -11,9 +11,9 @@ public class ApplicationController {
         return "index";
     }
 
-    @GetMapping("/hr")
+    @GetMapping("/Reservations")
     public String hr(){
-        return "/hr/index";
+        return "/Reservations/index";
     }
 
     @GetMapping("/fleet")
