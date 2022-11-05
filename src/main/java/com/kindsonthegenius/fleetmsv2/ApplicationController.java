@@ -48,7 +48,7 @@ public class ApplicationController {
 
     @GetMapping("/security")
     public String security(){
-        return "/security/index";
+        return "security/index";
     }
 
 }
