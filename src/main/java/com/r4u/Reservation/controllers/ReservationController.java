@@ -23,31 +23,31 @@ public class ReservationController {
 	public String  getAll(Model model){
 		List<Reservation> reservations =   reservationService.findAll();
 		model.addAttribute("reservations", reservations);
-		return "/reservation/reservations";
+		return "reservation/reservations";
 	}
 
-	@GetMapping("/reservation/invoiceAdd")
-	public String addInvoice(){
-		return "reservation/invoiceAdd";
+	@GetMapping("/reservation/reservationAdd")
+	public String addReservation(){
+		return "reservation/reservationAdd";
 	}
 
 	//The op parameter is either Edit or Details
-	@GetMapping("/reservation/invoice/{op}/{id}")
-	public String editInvoice(@PathVariable Integer id, @PathVariable String op, Model model){
+	@GetMapping("/reservation/reservation/{op}/{id}")
+	public String editReservation(@PathVariable Integer id, @PathVariable String op, Model model){
 		Reservation reservation = reservationService.findById(id);
 		model.addAttribute("reservation", reservation);
-		return "/reservation/reservation"+ op;
+		return "reservation/reservation"+ op;
 	}
 
-	@PostMapping("/reservation/invoices")
+	@PostMapping("/reservation/reservations")
 	public String save(Reservation reservation){
 		reservationService.save(reservation);
-		return "redirect:/reservation/invoices";
+		return "redirect:reservation/reservations";
 	}
 
-	@RequestMapping(value = "/reservation/invoices/delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
+	@RequestMapping(value = "/reservation/reservations/delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
 	public  String delete(@PathVariable Integer id){
 		reservationService.delete(id);
-		return "redirect:/reservation/invoices";
+		return "redirect:reservation/reservations";
 	}
 }
