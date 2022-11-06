@@ -1,8 +1,9 @@
-package com.r4u.security.services;
+package com.r4u.Restaurant.services;
 
 
-import com.r4u.security.models.Restaurant;
-import com.r4u.security.repositories.RestaurantRepository;
+import com.r4u.Reservation.models.Reservation;
+import com.r4u.Restaurant.models.Restaurant;
+import com.r4u.Restaurant.repositories.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -12,8 +13,6 @@ import java.util.List;
 @Service
 public class RestaurantService {
 
-    @Autowired
-    private BCryptPasswordEncoder encoder;
 
     @Autowired
     private RestaurantRepository restaurantRepository;
@@ -36,7 +35,6 @@ public class RestaurantService {
 
     //Update User
     public void save(Restaurant restaurant) {
-        restaurant.setPassword(encoder.encode(restaurant.getPassword()));
         restaurantRepository.save(restaurant);
     }
 

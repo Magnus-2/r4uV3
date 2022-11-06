@@ -11,10 +11,7 @@ public class ApplicationController {
         return "index";
     }
 
-    @GetMapping("/Reservations")
-    public String hr(){
-        return "Reservations/index";
-    }
+
 
     @GetMapping("/fleet")
     public String fleet(){
@@ -22,7 +19,7 @@ public class ApplicationController {
     }
 
     @GetMapping("/reservation")
-    public String accounts(){
+    public String reservation(){
         return "reservation/index";
     }
 

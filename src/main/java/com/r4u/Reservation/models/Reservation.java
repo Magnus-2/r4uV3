@@ -2,7 +2,7 @@ package com.r4u.Reservation.models;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import com.r4u.security.models.Restaurant;
+import com.r4u.Restaurant.models.Restaurant;
 import com.r4u.security.models.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;

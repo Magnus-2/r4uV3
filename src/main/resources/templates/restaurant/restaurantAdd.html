@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout">
+
+<body>
+
+<div layout:fragment="content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"><i class="fa fa fa-bars"></i> Restaurant Erstellen</h3>
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home"></i><a href="/index">Home</a></li>
+                    <li><i class="fa fa-bars"></i><a href="/restaurant">Restaurant</a></li>
+                    <li><i class="fa fa-square-o"></i>Erstellen</li>
+                </ol>
+            </div>
+        </div>
+        <div class="container" style="width: 70%">
+            <div class="row justify-content-center" >
+                <div class="col-lg-12">
+                    <form class="form-horizontal" th:action="@{/restaurant/restaurants}" method="post">
+                        <section class="panel">
+                            <header class="panel-heading">
+                                Restaurant Erstellen
+                            </header>
+                            <div class="panel-body">
+                                <div class="col-lg-6">
+                                    <div class="form-group row">
+                                        <label for="txtIdAd" class="col-sm-4 col-form-label">Id: </label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="txtIdAd" name="id" placeholder="Id" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="txtNameAdd" class="col-sm-4 col-form-label">Restaurantname: </label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="txtNameAdd" name="name" placeholder="Restaurantname">
+                                        </div>
+                                    </div> <!--Restaurantname-->
+                                    <div class="form-group row">
+                                        <label for="txtseatsAdd" class="col-sm-4 col-form-label">Sitzplatz Anzahl: </label>
+                                        <div class="col-sm-6">
+                                            <input type="number" class="form-control" id="txtseatsAdd" name="seats" placeholder="0">
+                                        </div>
+                                    </div>  <!--seats-->
+                                    <div class="form-group row">
+                                        <label for="txtzipcodeAdd" class="col-sm-4 col-form-label">Postleitzahl: </label>
+                                        <div class="col-sm-6">
+                                            <input type="number" class="form-control" id="txtzipcodeAdd" name="zipcode" placeholder="99999">
+                                        </div>
+                                    </div>  <!--zipcode-->
+                                    <div class="form-group row">
+                                        <label for="txtAddressAdd" class="col-sm-4 col-form-label">Adresse:</label>
+                                        <div class="col-sm-6">
+                                            <input class="form-control" id="txtAddressAdd" name="address" placeholder="Adresse" ></input>
+                                        </div>
+                                    </div>  <!--Address-->
+                                    <div class="form-group row">
+                                        <label for="txtcategoryAdd" class="col-sm-4 col-form-label">Kategorie: </label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="txtcategoryAdd" name="category" placeholder="Kategorie">
+                                        </div>
+                                    </div> <!--category-->
+                                    <div class="form-group row">
+                                        <label for="txtphonenumberAdd" class="col-sm-4 col-form-label">Telefonnummer: </label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="txtphonenumberAdd" name="phonenumber" placeholder="Telefonnummer">
+                                        </div>
+                                    </div> <!--phonenumber-->
+                                    <div class="form-group row">
+                                        <label for="txtEmailAdd" class="col-sm-4 col-form-label">Email:</label>
+                                        <div class="col-sm-6">
+                                            <input type="email" class="form-control" id="txtEmailAdd" name="email" placeholder="Email">
+                                        </div>
+                                    </div>  <!--email-->
+                                </div> <!--Linkespalte-->
+                                <div class="col-lg-6">
+                                    <div class="form-group row">
+                                        <label for="txtohmoAdd" class="col-sm-4 col-form-label">Öffnugszeiten Montag: </label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="txtohmoAdd" name="ohmo" placeholder="00:00-00:00">
+                                        </div>
+                                    </div> <!--ohmo-->
+                                    <div class="form-group row">
+                                        <label for="txtohtuAdd" class="col-sm-4 col-form-label">Öffnugszeiten Dienstag: </label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="txtohtuAdd" name="ohtu" placeholder="00:00-00:00">
+                                        </div>
+                                    </div> <!--ohtu-->
+                                    <div class="form-group row">
+                                        <label for="txtohweAdd" class="col-sm-4 col-form-label">Öffnugszeiten Mittwoch: </label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="txtohweAdd" name="ohwe" placeholder="00:00-00:00">
+                                        </div>
+                                    </div> <!--ohwe-->
+                                    <div class="form-group row">
+                                        <label for="txtohthAdd" class="col-sm-4 col-form-label">Öffnugszeiten Donnerstag: </label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="txtohthAdd" name="ohth" placeholder="00:00-00:00">
+                                        </div>
+                                    </div> <!--ohth-->
+                                    <div class="form-group row">
+                                        <label for="txtohfrAdd" class="col-sm-4 col-form-label">Öffnugszeiten Freitag: </label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="txtohfrAdd" name="ohfr" placeholder="00:00-00:00">
+                                        </div>
+                                    </div> <!--ohfr-->
+                                    <div class="form-group row">
+                                        <label for="txtohsaAdd" class="col-sm-4 col-form-label">Öffnugszeiten Samstag: </label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="txtohsaAdd" name="ohsa" placeholder="00:00-00:00">
+                                        </div>
+                                    </div> <!--ohsa-->
+                                    <div class="form-group row">
+                                        <label for="txtohsuAdd" class="col-sm-4 col-form-label">Öffnugszeiten Sonntag: </label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="txtohsuAdd" name="ohsu" placeholder="00:00-00:00">
+                                        </div>
+                                    </div> <!--ohsu-->
+                                </div> <!--Rechtespalte-->
+                            </div>
+                        </section>
+
+                        <section class="panel">
+                            <div class="panel-body">
+                                <button type="submit" class="btn btn-primary">
+                                    Save
+                                </button>
+                                <a href="/restaurant/restaurants" class="btn  btn-warning">
+                                    Exit
+                                </a>
+                            </div>
+                        </section>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

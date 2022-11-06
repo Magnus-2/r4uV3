@@ -1,9 +1,8 @@
 package com.r4u.security.services;
 
-import com.r4u.security.models.Restaurant;
 import com.r4u.security.models.Role;
 import com.r4u.security.models.User;
-import com.r4u.security.repositories.RestaurantRepository;
+import com.r4u.Restaurant.repositories.RestaurantRepository;
 import com.r4u.security.repositories.RoleRepository;
 import com.r4u.security.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,15 +51,6 @@ public class RoleService {
         userRoles.add(role);
         user.setRoles(userRoles);
         userRepository.save(user);
-    }
-
-    public void assignRestaurantRole(Integer userId, Integer roleId){
-        Restaurant restaurant = restaurantRepository.findById(userId).orElse(null);
-        Role role = roleRepository.findById(roleId).orElse(null);
-        Set<Role> restaurantRoles = restaurant.getRoles();
-        restaurantRoles.add(role);
-        restaurant.setRoles(restaurantRoles);
-        restaurantRepository.save(restaurant);
     }
 
     //Unassign Role to User
