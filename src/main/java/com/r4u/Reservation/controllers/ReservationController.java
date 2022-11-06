@@ -16,7 +16,6 @@ import java.util.List;
 public class ReservationController {
 	
 	@Autowired private ReservationService reservationService;
-	@Autowired private ClientService clientService;
 	
 
 	@GetMapping("/reservation/reservations")
@@ -32,11 +31,18 @@ public class ReservationController {
 	}
 
 	//The op parameter is either Edit or Details
-	@GetMapping("/reservation/reservation/{op}/{id}")
-	public String editReservation(@PathVariable Integer id, @PathVariable String op, Model model){
+	@GetMapping("/reservation/reservationEdit/{id}")
+	public String editReservation(@PathVariable Integer id, Model model){
 		Reservation reservation = reservationService.findById(id);
 		model.addAttribute("reservation", reservation);
-		return "reservation/reservation"+ op;
+		return "reservation/reservationEdit";
+	}
+
+	@GetMapping("/reservation/reservations/Details/{id}")
+	public String detailsReservation(@PathVariable Integer id, Model model){
+		Reservation reservation = reservationService.findById(id);
+		model.addAttribute("reservation", reservation);
+		return "reservation/reservationDetails";
 	}
 
 	@PostMapping("/reservation/reservations")

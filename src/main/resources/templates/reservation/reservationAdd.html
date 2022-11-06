@@ -9,21 +9,21 @@
     <section class="wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="fa fa fa-bars"></i> Invoice Add</h3>
+                <h3 class="page-header"><i class="fa fa fa-bars"></i> Reservierung hinzufügen</h3>
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i><a href="/accounts">Accounts Home</a></li>
-                    <li><i class="fa fa-bars"></i><a href="/accounts/reservations">Accounts List</a></li>
-                    <li><i class="fa fa-square-o"></i>Invoice Add</li>
+                    <li><i class="fa fa-home"></i><a href="/index">Home</a></li>
+                    <li><i class="fa fa-bars"></i><a href="/reservation">Reservierungen</a></li>
+                    <li><i class="fa fa-square-o"></i>Hinzufügen</li>
                 </ol>
             </div>
         </div>
         <div class="container" style="width: 70%">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <form class="form-horizontal" th:action="@{/parameters/reservations}" method="post">
+                    <form class="form-horizontal" th:action="@{/reservation}" method="post">
                         <section class="panel">
                             <header class="panel-heading">
-                                Add New Invoice Record
+                               Neue Reservierung hinzufügen
                             </header>
                             <div class="panel-body">
                                 <div class="form-group">
@@ -34,45 +34,44 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ddlClientAdd" class="col-form-label col-sm-4">Client: </label>
+                                    <label for="ddlUserAdd" class="col-form-label col-sm-4">Benutzer: </label>
                                     <div class="col-sm-6">
-                                        <select class="form-control" id="ddlClientAdd" name="clientid">
+                                        <select class="form-control" id="ddlUserAdd" name="Userid">
                                             <option>-SELECT-</option>
-                                            <option th:each="client : ${clients}"
-                                                    th:value="${client.id}"
-                                                    th:text="${client.name}">
+                                            <option th:each="user : ${users}"
+                                                    th:value="${user.id}"
+                                                    th:text="${user.name}">
                                             </option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="invoiceDateAdd" class="col-form-label col-sm-4">Invoice Date:</label>
+                                    <label for="reservationDateAdd" class="col-form-label col-sm-4">Datum:</label>
                                     <div class="col-sm-6">
-                                        <input type="date" class="form-control" id="invoiceDateAdd" name="invoiceDate">
+                                        <input type="date" class="form-control" id="reservationDateAdd" name="reservationDate">
                                     </div>
                                 </div>
-
                                 <div class="form-group">
-                                    <label for="ddlInvoiceStatsAdd" class="col-form-label col-sm-4">Invoice
-                                        Status: </label>
+                                    <label for="seatsAdd" class="col-form-label col-sm-4">Sitzplatz anzahl:</label>
                                     <div class="col-sm-6">
-                                        <select class="form-control" id="ddlInvoiceStatusAdd" name="invoicestatusid">
+                                        <input type="number" class="form-control" id="seatsAdd" name="seats">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ddlRestaurantAdd" class="col-form-label col-sm-4"> Restaurant: </label>
+                                    <div class="col-sm-6">
+                                        <select class="form-control" id="ddlRestaurantAdd" name="restaurantid">
                                             <option>-SELECT-</option>
-                                            <option th:each="invoiceStatus : ${invoiceStatuses}"
-                                                    th:value="${invoiceStatus.id}"
-                                                    th:text="${invoiceStatus.description}">
+<!--Hier vieleicht restaurants -->          <option th:each="restaurant : ${restaurant}"
+                                                    th:value="${restaurant.id}"
+                                                    th:text="${restaurant.name}">
                                             </option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> <!--Restaurant -->
 
-                                <div class="form-group">
-                                    <label for="remarksAdd" class="col-form-label col-sm-4">Remarks:</label>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="remarksAdd" name="remarks">
-                                    </div>
-                                </div>
+
                             </div>
                         </section>
                         <section class="panel">
@@ -81,7 +80,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     Save
                                 </button>
-                                <a href="/countries" class="btn  btn-warning">
+                                <a href="/reservation" class="btn  btn-warning">
                                     Exit
                                 </a>
                             </div>
