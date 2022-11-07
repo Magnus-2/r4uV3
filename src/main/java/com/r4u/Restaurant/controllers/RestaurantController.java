@@ -21,9 +21,17 @@ public class RestaurantController {
 	@GetMapping("/restaurant/restaurants")
 	public String  getAll(Model model){
 		List<Restaurant> restaurants =   restaurantService.findAll();
-		model.addAttribute("restaurants", restaurants);// hier vielleicht restaurants
+		model.addAttribute("restaurants", restaurants);
 		return "restaurant/restaurants";
 	}
+
+	//The Get Restaurant By Id
+	@GetMapping("/restaurant/restaurants/{id}")
+	@ResponseBody
+	public Restaurant getRestaurant(@PathVariable Integer id){
+		return restaurantService.findById(id);
+	}
+
 
 	@GetMapping("/restaurant/restaurantAdd")
 	public String addRestaurant(){

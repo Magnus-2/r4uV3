@@ -2,12 +2,15 @@ package com.r4u.Restaurant.models;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.r4u.Reservation.models.Reservation;
+import com.r4u.parameters.models.State;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -38,8 +41,6 @@ public class Restaurant {
 	private String email;
 
 
-	@ManyToOne
-	@JoinColumn(name="reservationtid", insertable = false, updatable = false)
-	private com.r4u.Reservation.models.Reservation reservation;
-	private Integer reservationid;
+	@OneToMany(mappedBy="restaurant")
+	private List<Reservation> reservation; //reservations
 }

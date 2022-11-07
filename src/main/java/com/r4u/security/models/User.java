@@ -1,11 +1,14 @@
 package com.r4u.security.models;
 
+import com.r4u.Reservation.models.Reservation;
+import com.r4u.parameters.models.State;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -30,5 +33,9 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "role_id")}
     )
     Set<Role> roles = new HashSet<>();
+
+
+    @OneToMany(mappedBy="user")
+    private List<Reservation> reservation; //reservations
 
 }

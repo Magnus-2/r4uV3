@@ -13,9 +13,9 @@ public class ApplicationController {
 
 
 
-    @GetMapping("/fleet")
-    public String fleet(){
-        return "fleet/index";
+    @GetMapping("/restaurant")
+    public String restaurant(){
+        return "restaurant/index";
     }
 
     @GetMapping("/reservation")

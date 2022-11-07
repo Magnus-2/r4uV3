@@ -1,5 +1,6 @@
 package com.r4u.Reservation.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.r4u.Restaurant.models.Restaurant;
@@ -27,16 +28,13 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@ManyToOne
-	@JoinColumn(name="userid", insertable=false, updatable=false)
-	private User user;
-	private Integer userid;
 
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date reservationDate;
 
-	@DateTimeFormat(pattern = "hh-mm")
-	private Time reservationTime;
+
+	private String reservationDate;
+
+
+	private String reservationTime;
 
 	private Integer seats;
 
@@ -44,4 +42,12 @@ public class Reservation {
 	@JoinColumn(name="restaurantid", insertable = false, updatable = false)
 	private Restaurant restaurant;
 	private Integer restaurantid;
+
+
+	@ManyToOne
+	@JoinColumn(name="userid", insertable=false, updatable=false)
+	private User user;
+	private Integer userid;
+
+
 }
