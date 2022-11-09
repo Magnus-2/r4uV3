@@ -32,6 +32,16 @@
                                         <input type="text" class="form-control" id="idAdd" name="id" disabled>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="usernameAdd" class="col-form-label col-sm-4">Username:</label>
+                                    <div class="col-sm-3">
+                                        <span sec:authentication="name" id="usernameAdd" name="username" readonly>Username</span>
+                                    </div>
+                                    <label for="userid" class="col-form-label col-sm-2">Userid:</label>
+                                    <div class="col-sm-3">
+                                        <input th:value="${#authentication.getPrincipal().getId()}" id="userid" name="userid" readonly>
+                                    </div>
+                                </div>
 
                              <!--   <div class="form-group">
                                     <label for="ddlUserAdd" class="col-form-label col-sm-4">Benutzer: </label>
@@ -68,7 +78,7 @@
                                   <div class="form-group">
                                       <label for="ddlRestaurantAdd" class="col-form-label col-sm-4"> Restaurant: </label>
                                       <div class="col-sm-6">
-                                          <select class="form-control" id="ddlRestaurantAdd" name="restaurantid">
+                                          <select class="form-control" id="ddlRestaurantAdd" name="restaurantid" required>
                                               <option>-SELECT-</option>
                                               <option th:each="restaurant : ${restaurants}"
                                                     th:value="${restaurant.id}"

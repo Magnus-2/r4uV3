@@ -34,7 +34,7 @@ public class User {
     )
     Set<Role> roles = new HashSet<>();
 
-
+//To get a User in Reservation
     @OneToMany(mappedBy="user")
     private List<Reservation> reservation; //reservations
 

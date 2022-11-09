@@ -1,6 +1,6 @@
 package com.r4u.Reservation.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.r4u.Restaurant.models.Restaurant;
@@ -8,11 +8,11 @@ import com.r4u.security.models.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
+
 
 import javax.persistence.*;
-import java.sql.Time;
-import java.util.Date;
+import java.security.Principal;
+
 
 @Entity
 @Data
@@ -27,15 +27,8 @@ public class Reservation {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-
-
-
-
 	private String reservationDate;
-
-
 	private String reservationTime;
-
 	private Integer seats;
 
 	@ManyToOne
@@ -48,6 +41,7 @@ public class Reservation {
 	@JoinColumn(name="userid", insertable=false, updatable=false)
 	private User user;
 	private Integer userid;
+
 
 
 }

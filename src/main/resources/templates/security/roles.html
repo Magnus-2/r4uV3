@@ -37,6 +37,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Save</button>
                         <button type="reset" class="btn btn-warning">Clear</button>
+
                     </form>
                 </div>
                 <div class="panel-body">
@@ -57,6 +58,9 @@
                                     <a id="display" th:href="@{'/security/role/'+${role.id}}"
                                        class="btn btn-primary"><i class="icon_pencil-edit"></i>
                                     </a>
+                                    <a class="btn btn-danger" onclick="return confirm('Are you sure you want delete?')"
+                                       th:href="@{'/security/role/delete/'+${role.id}}">
+                                        <i class="icon_close_alt2"></i></a>
                                 </div>
                             </td>
                         </tr>

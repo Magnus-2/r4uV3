@@ -32,6 +32,16 @@
                                         <input type="text" class="form-control" th:value="${reservation.id}" id="idAdd" name="id" readonly>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="usernameAdd" class="col-form-label col-sm-4">Username:</label>
+                                    <div class="col-sm-3">
+                                        <span sec:authentication="name" id="usernameAdd" name="username" readonly>Username</span>
+                                    </div>
+                                    <label for="userid" class="col-form-label col-sm-2">Userid:</label>
+                                    <div class="col-sm-3">
+                                        <input th:value="${#authentication.getPrincipal().getId()}" id="userid" name="userid" readonly>
+                                    </div>
+                                </div>
 
                                 <!--   <div class="form-group">
                                        <label for="ddlUserAdd" class="col-form-label col-sm-4">Benutzer: </label>

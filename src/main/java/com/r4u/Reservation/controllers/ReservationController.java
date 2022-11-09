@@ -5,6 +5,7 @@ import com.r4u.Reservation.models.Reservation;
 import com.r4u.Reservation.services.ReservationService;
 import com.r4u.Restaurant.services.RestaurantService;
 import com.r4u.parameters.services.ClientService;
+import com.r4u.security.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,11 +19,13 @@ public class ReservationController {
 	
 	@Autowired private ReservationService reservationService;
 	@Autowired private RestaurantService restaurantService;
+	 @Autowired private UserService userService;
 
 
 	public  Model addModelAttribute(Model model){
 		model.addAttribute("reservations", reservationService.findAll());
 		model.addAttribute("restaurants", restaurantService.findAll());
+		model.addAttribute("users", userService.findAll());
 		return model;
 	}
 

@@ -1,5 +1,6 @@
 package com.r4u.security.controllers;
 
+import com.r4u.Restaurant.models.Restaurant;
 import com.r4u.security.models.User;
 import com.r4u.security.services.RoleService;
 import com.r4u.security.services.UserService;
@@ -25,6 +26,14 @@ public class UserController {
         return "security/users";
     }
 
+    //The Get User By Id
+    @GetMapping("/security/users/{id}")
+    @ResponseBody
+    public User getUser(@PathVariable Integer id){
+        return userService.findById(id);
+    }
+
+    // Get User for /Edit or /Details
     @GetMapping("/security/user/{op}/{id}")
     public String editUser(@PathVariable Integer id, @PathVariable String op, Model model) {
         User user = userService.findById(id);
@@ -45,7 +54,7 @@ public class UserController {
 
     @RequestMapping(value = "/security/user/delete/{id}", method = {RequestMethod.DELETE, RequestMethod.GET})
     public String delete(@PathVariable Integer id) {
-        roleService.delete(id);
+        userService.delete(id);
         return "redirect:/security/users";
     }
 
