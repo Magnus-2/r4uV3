@@ -5,15 +5,21 @@ import com.r4u.Alexa.models.OutputSpeechRO;
 import com.r4u.Alexa.models.ResponseRO;
 import com.r4u.Alexa.services.TaskList;
 import com.r4u.Reservation.models.Reservation;
+import com.r4u.Reservation.services.ReservationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-
+@RestController
 public class AlexaController {
+
+    @Autowired
+    private ReservationService reservationService;
+
 
     @PostMapping(
             path = "/Alexa/UR/all",
@@ -39,6 +45,9 @@ public class AlexaController {
 
                 //usertasks hinzufügen
                 TaskList reservationList = new TaskList(new Reservation());
+
+              //  List<Reservation> reservations =   reservationService.findAll();
+
                 reservationList.setReservation();
                 AtomicInteger i = new AtomicInteger(0);
                 reservationList.getReservation().forEach(
