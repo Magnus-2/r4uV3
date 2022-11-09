@@ -37,6 +37,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/restaurant/restaurantAdd").hasAnyAuthority("ADMIN", "RESTAURANT" )
                 .antMatchers("/restaurant/restaurant/Edit/**").hasAnyAuthority("ADMIN", "RESTAURANT" )
                 .antMatchers("/restaurant/delete/**").hasAnyAuthority("ADMIN", "RESTAURANT" )
+                .antMatchers("/api/reservation/reservations").not().authenticated()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -49,6 +50,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login").permitAll()
                 .and()
                 .exceptionHandling().accessDeniedPage("/accessDenied")
+
         ;
     }
 
