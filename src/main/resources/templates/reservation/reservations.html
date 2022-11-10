@@ -53,7 +53,7 @@
                                 <td th:text="${reservation.seats}"></td>
                                 <td th:each="restaurant:${restaurants}"
                                     th:if="${reservation.restaurantid}==${restaurant.id} ? True "
-                                    th:text="restaurant.name"></td>
+                                    th:text="${restaurant.name}"></td>
 
 
 
