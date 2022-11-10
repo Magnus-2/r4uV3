@@ -4,6 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * Security Controller manages the Apis between the HTML code
+ * and the Java code for the Class Scurity
+ */
 @Controller
 public class SecurityController {
 

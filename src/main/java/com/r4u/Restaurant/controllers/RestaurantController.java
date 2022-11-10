@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+/**
+ * Restaurant Controller manages the Apis between the HTML code
+ *  and the Java code for the Class Restaurant
+ */
 @Controller
 public class RestaurantController {
 	

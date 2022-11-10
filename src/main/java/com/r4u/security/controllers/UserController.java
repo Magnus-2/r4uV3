@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+/**
+ * User Controller manages the Apis between the HTML code
+ * and the Java code for the Class User
+ */
 @Controller
 public class UserController {
 
@@ -58,4 +62,14 @@ public class UserController {
         return "redirect:/security/users";
     }
 
+
+    /**
+     * Gives back your user informations
+     * @param model
+     * @return
+     */
+    @GetMapping("/security/currentUser")
+    public String currentUser(Model model){
+        return "security/currentUser";
+    }
 }

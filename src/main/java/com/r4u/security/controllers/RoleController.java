@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Role Controller manages the Apis between the HTML code
+ *  and the Java code for the Class Role
+ */
 @Controller
 public class RoleController {
 
