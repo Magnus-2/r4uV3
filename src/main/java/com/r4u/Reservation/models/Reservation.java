@@ -43,12 +43,6 @@ public class Reservation {
 	private Integer userid;
 
 
-public Reservation (Integer id, String reservationDate, String reservationTime, Integer seats,Integer restaurantid){
-	this.id = id;
-	this.reservationDate = reservationDate;
-	this.reservationTime = reservationTime;
-	this.seats = seats;
-	this.restaurantid = restaurantid;
-}
+
 
 }
