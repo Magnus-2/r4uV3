@@ -13,7 +13,7 @@ public class ReservationService {
 	@Autowired
 	private ReservationRepository reservationRepository;
 	
-	//Get All Invoices
+	//Get All Reservations
 	public List<Reservation> findAll(){
 		return reservationRepository.findAll();
 	}
