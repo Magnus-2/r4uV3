@@ -19,7 +19,7 @@ public class ReservationRestController {
 
     @CrossOrigin
     @GetMapping("/Alexa")
-    public List<Reservation>  getAll(@RequestBody Reservation reservation){
+    public List<Reservation>  getAll(Model model){
         List<Reservation> reservations =   reservationService.findAll();
         return reservations;
     }
