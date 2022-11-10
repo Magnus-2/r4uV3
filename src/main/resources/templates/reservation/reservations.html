@@ -35,7 +35,7 @@
                             <tbody>
                             <tr>
                                 <th></th>
-                                <th><i class="icon_profile"></i> User Name</th>
+                                <th><i class="icon_profile"></i> Your User Id</th>
                                 <th><i class="icon_calendar"></i> Datum</th>
                                 <th><i class="fa-solid fa-timer"></i> Uhrzeit</th>
                                 <th><i class="icon_profile"></i> Sitzplatz Anzahl</th>
@@ -51,7 +51,9 @@
                                 <td th:text="${reservation.reservationDate}"></td>
                                 <td th:text="${reservation.reservationTime}"></td>
                                 <td th:text="${reservation.seats}"></td>
-                                <td th:text="${reservation.restaurantid}"></td>
+                                <td th:each="restaurant : ${restaurants}"
+                                    th:value="${restaurant.id}"
+                                    th:text="${restaurant.name}"></td>
 
 
 

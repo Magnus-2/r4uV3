@@ -55,9 +55,7 @@ public class ReservationController {
 	public String detailsReservation(@PathVariable Integer id, Model model){
 		addModelAttribute(model);
 		model.addAttribute("reservation", reservationService.findById(id));
-		//Reservation reservation = reservationService.findById(id);
-		//model.addAttribute("reservation", reservation);
-		return "/reservation/reservationDetails";
+		return "reservation/reservationDetails";
 	}
 
 	@PostMapping("/reservation/reservations")
