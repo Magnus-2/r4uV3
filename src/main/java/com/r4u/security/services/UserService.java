@@ -7,7 +7,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+/**
+ * The User Service specialise the functions
+ * which you can use to get Data for example
+ */
 @Service
 public class UserService {
 

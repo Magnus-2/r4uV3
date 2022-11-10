@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+/**
+ * The Restaurant Service specialise the functions
+ * which you can use to get Data for example
+ */
 @Service
 public class RestaurantService {
 

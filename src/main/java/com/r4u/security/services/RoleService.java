@@ -10,40 +10,69 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Set;
-
+/**
+ * The Role Service specialise the functions
+ * which you can use to get Data for example
+ */
 @Service
 public class RoleService {
-
+    /**
+     * Tells Spring to connect with
+     * RoleRepository
+     */
     @Autowired
     private RoleRepository roleRepository;
-
+    /**
+     * Tells SPring to connect with
+     * UserRepository
+     */
     @Autowired
     private UserRepository userRepository;
-
+    /**
+     * Tells SPring to connect with
+     * RestaurantRepository
+     */
     @Autowired
     private RestaurantRepository restaurantRepository;
 
-    //Get All Roles
+    /**
+     * Gives back all Roles
+     * @return
+     */
     public List<Role> findAll() {
         return roleRepository.findAll();
     }
 
-    //Get Role By Id
+    /**
+     * Gives back a Role based on Id
+     * @param id
+     * @return
+     */
     public Role findById(int id) {
         return roleRepository.findById(id).orElse(null);
     }
 
-    //Delete Role
+    /**
+     * Delets a Role
+     * @param id
+     */
     public void delete(int id) {
         roleRepository.deleteById(id);
     }
 
-    //Update Role
+    /**
+     * Saves or Edit a Role
+     * @param role
+     */
     public void save(Role role) {
         roleRepository.save(role);
     }
 
-    //Assign Role to User
+    /**
+     * Assign a User to a Role
+     * @param userId
+     * @param roleId
+     */
     public void assignUserRole(Integer userId, Integer roleId) {
         User user = userRepository.findById(userId).orElse(null);
         Role role = roleRepository.findById(roleId).orElse(null);
@@ -53,17 +82,29 @@ public class RoleService {
         userRepository.save(user);
     }
 
-    //Unassign Role to User
+    /**
+     *  Unassign a Role to a User
+     */
     public void unassignUserRole(Integer userId, Integer roleId) {
         User user = userRepository.findById(userId).orElse(null);
         user.getRoles().removeIf(x -> x.getId() == roleId);
         userRepository.save(user);
     }
 
+    /**
+     * Gives back the Roles of a User
+     * @param user
+     * @return
+     */
     public Set<Role> getUserRoles(User user) {
         return user.getRoles();
     }
 
+    /**
+     * Gives back all Roles which a User does not have
+     * @param user
+     * @return
+     */
     public List<Role> getUserNotRoles(User user) {
         return roleRepository.getUserNotRoles(user.getId());
     }

@@ -17,27 +17,51 @@ import org.springframework.web.servlet.view.RedirectView;
  */
 @Controller
 public class UserController {
-
+    /**
+     * Tells Spring to connect with
+     * the UserService
+     */
     @Autowired
     private UserService userService;
-
+    /**
+     * Tells SPring to connect with
+     * the RoleService
+     */
     @Autowired
     private RoleService roleService;
 
+    /**
+     * Gives back all Users
+     * @param model
+     * @return
+     */
     @GetMapping("/security/users")
     public String getAll(Model model) {
         model.addAttribute("users", userService.findAll());
         return "security/users";
     }
 
-    //The Get User By Id
+    /**
+     * Get a User based on the Id
+     * @param id
+     * @return
+     */
     @GetMapping("/security/users/{id}")
     @ResponseBody
     public User getUser(@PathVariable Integer id){
         return userService.findById(id);
     }
 
-    // Get User for /Edit or /Details
+    /**
+     * The {op} stands for Operation
+     * this Method is for Edit and Details
+     * based on the op one is choosen and gives back a
+     * User to Edit or to see the Details based on the Id
+     * @param id
+     * @param op
+     * @param model
+     * @return
+     */
     @GetMapping("/security/user/{op}/{id}")
     public String editUser(@PathVariable Integer id, @PathVariable String op, Model model) {
         User user = userService.findById(id);
@@ -47,6 +71,13 @@ public class UserController {
         return "security/user" + op; //returns employeeEdit or employeeDetails
     }
 
+    /**
+     * Adds a new user
+     * or saves an edited user
+     * @param user
+     * @param redir
+     * @return
+     */
     @PostMapping("/users/addNew")
     public RedirectView addNew(User user, RedirectAttributes redir) {
         userService.save(user);
@@ -56,6 +87,11 @@ public class UserController {
         return redirectView;
     }
 
+    /**
+     * Delets a user based on the Id
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/security/user/delete/{id}", method = {RequestMethod.DELETE, RequestMethod.GET})
     public String delete(@PathVariable Integer id) {
         userService.delete(id);

@@ -3,6 +3,10 @@ package com.r4u;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+/**
+ * Manage the Apis between the index.html Files of every Entity
+ *
+ */
 @Controller
 public class ApplicationController {
 

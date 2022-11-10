@@ -6,6 +6,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.util.Optional;
 
+/**
+ * To monitor what a user has made
+ */
 public class SpringSecurityAuditorAware implements AuditorAware<String> {
     @Override
     public Optional<String> getCurrentAuditor() {

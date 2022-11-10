@@ -10,12 +10,15 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
+/**
+ * This is the User Model her you can see
+ * which attributes a User has
+ */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "\"User\"")
+@Table(name = "\"User\"") // without this you can not save a user in a Postgresql Database because it is a spezial Tablename
 public class User {
 
     @Id
@@ -25,7 +28,9 @@ public class User {
     private String lastname;
     private String username;
     private String password;
-
+    /**
+     * Many User to Many Roles
+     */
     @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_role",
@@ -34,7 +39,9 @@ public class User {
     )
     Set<Role> roles = new HashSet<>();
 
-//To get a User in Reservation
+    /**
+     * 1 User to Many Reservations
+     */
     @OneToMany(mappedBy="user")
     private List<Reservation> reservation; //reservations
 

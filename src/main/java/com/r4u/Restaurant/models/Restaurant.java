@@ -12,6 +12,10 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * This is the Restaurant Model her you can see
+ * which attributes a Restaurant has
+ */
 @Entity
 @Data
 @NoArgsConstructor
@@ -40,7 +44,9 @@ public class Restaurant {
 	private String phonenumber;
 	private String email;
 
-
+	/**
+	 * 1 Restaurant has Many Reservations
+	 */
 	@OneToMany(mappedBy="restaurant")
 	private List<Reservation> reservation; //reservations
 }

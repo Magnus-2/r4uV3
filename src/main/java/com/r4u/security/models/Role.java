@@ -9,6 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * This is the Role Model her you can see
+ * which attributes a Role has
+ */
 @Entity
 @Data
 @NoArgsConstructor

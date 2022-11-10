@@ -8,12 +8,12 @@ import com.r4u.security.models.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-
 import javax.persistence.*;
-import java.security.Principal;
 
-
+/**
+ * This is the Reservation Model her you can see
+ * which attributes a Reservation has
+ */
 @Entity
 @Data
 @NoArgsConstructor
@@ -32,12 +32,17 @@ public class Reservation {
 	private String reservationTime;
 	private Integer seats;
 
+	/**
+	 * Many Reservations can have 1 Restaurants
+	 */
 	@ManyToOne
 	@JoinColumn(name="restaurantid", insertable = false, updatable = false)
 	private Restaurant restaurant;
 	private Integer restaurantid;
 
-
+	/**
+	 * Many Reservations can have 1 User
+	 */
 	@ManyToOne
 	@JoinColumn(name="userid", insertable=false, updatable=false)
 	private User user;
