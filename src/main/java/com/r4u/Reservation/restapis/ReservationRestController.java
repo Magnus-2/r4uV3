@@ -18,7 +18,7 @@ public class ReservationRestController {
     private ReservationService reservationService;
 
     @CrossOrigin
-    @GetMapping("/api/reservation/reservations")
+    @GetMapping("/Alexa")
     public List<Reservation>  getAll(Model model){
         List<Reservation> reservations =   reservationService.findAll();
         return reservations;
