@@ -30,12 +30,25 @@
                                         <input type="text" class="form-control" id="idAdd" th:value="${#authentication.getPrincipal().getId()}" name="id" disabled>
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="panel-body">
                                 <div class="form-group">
-                                    <label for="userid" class="col-form-label col-sm-4">Userid:</label>
+                                    <label for="name" class="col-form-label col-sm-4">Id:</label>
                                     <div class="col-sm-6">
-                                        <input th:value="${#authentication.getPrincipal().getId()}" id="userid" name="userid" readonly>
+                                        <input type="text" class="form-control" id="name" th:value="${#authentication.getPrincipal().getUsername()}" name="id" disabled>
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="idAdd" class="col-form-label col-sm-4">Id:</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="idAdd" th:value="${#authentication.getPrincipal().getId()}" name="id" disabled>
+                                    </div>
+                                </div>
+
                             </div>
                         </section>
                         <section class="panel">
