@@ -34,18 +34,9 @@
                             </div>
                             <div class="panel-body">
                                 <div class="form-group">
-                                    <label for="name" class="col-form-label col-sm-4">Id:</label>
+                                    <label for="name" class="col-form-label col-sm-4">Username:</label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="name" th:value="${#authentication.getPrincipal().getUsername()}" name="id" disabled>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="panel-body">
-                                <div class="form-group">
-                                    <label for="idAdd" class="col-form-label col-sm-4">Id:</label>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="idAdd" th:value="${#authentication.getPrincipal().getId()}" name="id" disabled>
+                                        <input type="text" class="form-control" id="name" th:value="${#authentication.getPrincipal().getUsername()}" name="username" disabled>
                                     </div>
                                 </div>
 
