@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout">
+
+<body>
+
+<div layout:fragment="content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"><i class="fa fa fa-bars"></i>User Details</h3>
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home"></i><a href="/index">User Details</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="container" style="width: 70%">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+
+                        <section class="panel">
+                            <header class="panel-heading">
+                                Neue Reservierung hinzufügen
+                            </header>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="idAdd" class="col-form-label col-sm-4">Id:</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="idAdd" name="id" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="userid" class="col-form-label col-sm-4">Userid:</label>
+                                    <div class="col-sm-6">
+                                        <input th:value="${#authentication.getPrincipal().getId()}" id="userid" name="userid" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="panel">
+
+                            <div class="panel-body">
+                                <button type="submit" class="btn btn-primary">
+                                    Save
+                                </button>
+                                <a href="/security/users" class="btn  btn-warning">
+                                    Exit
+                                </a>
+                            </div>
+                        </section>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

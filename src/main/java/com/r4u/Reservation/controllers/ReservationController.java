@@ -69,4 +69,9 @@ public class ReservationController {
 		reservationService.delete(id);
 		return "redirect:/reservation/reservations";
 	}
+
+	@GetMapping("/security/currentUser")
+	public String currentUser(Model model){
+		return "security/currentUser";
+	}
 }
