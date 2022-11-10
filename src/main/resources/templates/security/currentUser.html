@@ -31,7 +31,7 @@
                                     </div>
                                 </div>
 
-                            </div>
+                            </div> <!-- UserId -->
                             <div class="panel-body">
                                 <div class="form-group">
                                     <label for="name" class="col-form-label col-sm-4">Username:</label>
@@ -40,7 +40,25 @@
                                     </div>
                                 </div>
 
-                            </div>
+                            </div> <!-- Username -->
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="firstname" class="col-form-label col-sm-4">Username:</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="firstname" th:value="${#authentication.getPrincipal().getFirstname()}" name="firstname" disabled>
+                                    </div>
+                                </div>
+
+                            </div> <!-- Firstname -->
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="lastname" class="col-form-label col-sm-4">Username:</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="lastname" th:value="${#authentication.getPrincipal().getLastname()}" name="lastname" disabled>
+                                    </div>
+                                </div>
+
+                            </div> <!-- Lastname -->
                         </section>
                         <section class="panel">
 
